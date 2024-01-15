@@ -8,7 +8,7 @@ const PlayerHeader = (props: Props) => {
   const { player } = props;
   return (
     <div className="flex justify-between w-full font-bold text-[1rem] p-4">
-      <h2 className="">{player.playerName}</h2>
+      <h2 className="truncate">{player.playerName}</h2>
       <h3>Age: {player.age}</h3>
     </div>
   );

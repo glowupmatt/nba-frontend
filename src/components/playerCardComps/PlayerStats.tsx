@@ -11,7 +11,6 @@ type Props = {
 const PlayerStats = (props: Props) => {
   const { totalStats } = props;
   const stats = totalStats[0];
-  const statsElements = [];
   const excludedKeys = [
     "id",
     "playerId",
@@ -26,17 +25,21 @@ const PlayerStats = (props: Props) => {
     "minutesPlayed",
     "totalGamesStarted",
   ];
-  for (let key in stats) {
-    if (!excludedKeys.includes(key)) {
-      statsElements.push(
-        <div key={key}>
-          <h2>{formatName(key)}:</h2>
-          <p>{stats[key]}</p>
-        </div>
-      );
-    }
-  }
-  return <div className="grid grid-cols-2 min-h-[12rem]">{statsElements}</div>;
+
+  return (
+    <div className="grid grid-cols-2 min-h-[12rem] gap-6">
+      {Object.keys(stats)
+        .filter((key) => !excludedKeys.includes(key))
+        .map((key) => {
+          return (
+            <div key={key}>
+              <h2 className="truncate">{formatName(key)}:</h2>
+              <p>{stats[key]}</p>
+            </div>
+          );
+        })}
+    </div>
+  );
 };
 
 export default PlayerStats;
