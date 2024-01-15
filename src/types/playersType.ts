@@ -16,21 +16,24 @@ export type GameType = {
 };
 
 export type TotalStatsType = {
-  playerName?: string;
-  totalGamesPlayed: string;
-  totalGamesStarted: string;
-  minutesPlayed: string;
-  fieldGoals: string;
-  fieldGoalAttempts: string;
-  fieldGoalPercentage: string;
-  threePointers: string;
-  twoPointers: string;
-  totalRebounds: string;
-  assists: string;
-  blocks: string;
-  turnovers: string;
-  points: string;
+  [key: string]: string | undefined;
+  id?: string;
+  totalGamesPlayed?: string;
+  totalGamesStarted?: string;
+  minutesPlayed?: string;
+  fieldGoals?: string;
+  fieldGoalAttempts?: string;
+  fieldGoalPercentage?: string;
+  threePointers?: string;
+  twoPointers?: string;
+  totalRebounds?: string;
+  assists?: string;
+  blocks?: string;
+  turnovers?: string;
+  points?: string;
   playerId?: string;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type PlayerType = {

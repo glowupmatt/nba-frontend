@@ -12,7 +12,6 @@ export default async function Home() {
         <Header />
         <TopFivePlayersByTotal data={data} />
       </div>
-      <div className="flex flex-col items-center justify-center"></div>
     </main>
   );
 }
