@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { UpdatePlayerType } from "@/types/playersType";
 import PlayerHeader from "./PlayerHeader";
 import PlayerImg from "./PlayerImg";
@@ -11,16 +12,21 @@ type Props = {
 const PlayerCard = (props: Props) => {
   const { player } = props;
   return (
-    <div className="flex flex-col justify-between w-full items-center p-4 bg-gray-200 rounded-lg shadow-md">
-      <PlayerHeader player={player} />
-      <div className="flex flex-col">
-        <div className="relative h-[13rem]">
-          <PlayerImg
-            playerImg={player.playerImage}
-            playerName={player.playerName}
-          />
+    <div className="flex flex-col w-[16rem] items-center p-0 rounded-lg shadow-md relative">
+      <div className="absolute z-[100] w-[14rem] h-[25rem] flex justify-center items-center flex-col">
+        <PlayerHeader player={player} />
+        <div className="w-full ">
+          {player.totalStats && <PlayerStats totalStats={player.totalStats} />}
         </div>
-        {player.totalStats && <PlayerStats totalStats={player.totalStats} />}
+      </div>
+      <div className="relative h-full">
+        <Image
+          src="/cardBg.svg"
+          alt="card-bg"
+          width={1080}
+          height={1920}
+          className="h-[25rem] w-full"
+        />
       </div>
     </div>
   );

@@ -27,14 +27,16 @@ const PlayerStats = (props: Props) => {
   ];
 
   return (
-    <div className="grid grid-cols-2 min-h-[12rem] gap-6">
+    <div className="grid grid-cols-2 min-h-[12rem] gap-2 w-full justify-items-center items-center justify-center">
       {Object.keys(stats)
         .filter((key) => !excludedKeys.includes(key))
         .map((key) => {
           return (
-            <div key={key}>
-              <h2 className="truncate">{formatName(key)}:</h2>
-              <p>{stats[key]}</p>
+            <div key={key} className="leading-[1rem]">
+              <h2 className="truncate font-bold text-[.8rem] w-[6rem]">
+                {formatName(key)}:
+              </h2>
+              <p className="text-center">{stats[key]}</p>
             </div>
           );
         })}
