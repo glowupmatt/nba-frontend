@@ -8,7 +8,7 @@ export default async function Home() {
   const data: UpdatePlayerType[] = await getAllPlayers();
   return (
     <main className="">
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center gap-4">
         <Header />
         <TopFivePlayersByTotal data={data} />
       </div>

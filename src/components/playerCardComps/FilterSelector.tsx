@@ -15,7 +15,12 @@ type Props = {
 
 const FilterSelector = (props: Props) => {
   const { setSortType, sortType } = props;
-  const filterOptions = ["points", "assists", "rebounds", "blocks", "steals"];
+  const filterOptions = [
+    "points",
+    "fieldGoals",
+    "threePointers",
+    "twoPointers",
+  ];
 
   return (
     <Select>

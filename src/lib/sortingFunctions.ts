@@ -21,19 +21,19 @@ export const sortPlayersTotal = (
       return 0;
     });
   }
-  if (filter === "minutesPlayed") {
+  if (filter === "fieldGoals") {
     players.sort((a, b) => {
       if (
         a &&
         a.totalStats &&
         a.totalStats[0] &&
-        a.totalStats[0].minutesPlayed &&
+        a.totalStats[0].fieldGoals &&
         b &&
         b.totalStats &&
         b.totalStats[0] &&
-        b.totalStats[0].minutesPlayed
+        b.totalStats[0].fieldGoals
       ) {
-        return +a.totalStats[0].minutesPlayed - +b.totalStats[0].minutesPlayed;
+        return +b.totalStats[0].fieldGoals - +a.totalStats[0].fieldGoals;
       }
       return 0;
     });
@@ -50,7 +50,7 @@ export const sortPlayersTotal = (
         b.totalStats[0] &&
         b.totalStats[0].threePointers
       ) {
-        return +a.totalStats[0].threePointers - +b.totalStats[0].threePointers;
+        return +b.totalStats[0].threePointers - +a.totalStats[0].threePointers;
       }
       return 0;
     });
@@ -67,7 +67,7 @@ export const sortPlayersTotal = (
         b.totalStats[0] &&
         b.totalStats[0].twoPointers
       ) {
-        return +a.totalStats[0].twoPointers - +b.totalStats[0].twoPointers;
+        return +b.totalStats[0].twoPointers - +a.totalStats[0].twoPointers;
       }
       return 0;
     });
