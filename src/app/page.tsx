@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { UpdatePlayerType } from "@/types/playersType";
 import PlayerTable from "@/components/playerTableComps/PlayerTable";
 import { MobileColumns } from "@/components/playerTableComps/TableData";
+import { Button } from "@/components/ui/button";
 
 export default async function Home() {
   const data: UpdatePlayerType[] = await getAllPlayers();
@@ -13,7 +14,9 @@ export default async function Home() {
       <div className="flex flex-col items-center justify-center gap-4">
         <Header />
         <TopFivePlayersByTotal data={data} />
-        <PlayerTable columns={MobileColumns} data={data} />
+        <div className="p-[1rem] max-w-full w-screen">
+          <PlayerTable columns={MobileColumns} data={data} />
+        </div>
       </div>
     </main>
   );

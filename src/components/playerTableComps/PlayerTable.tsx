@@ -4,6 +4,7 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
+  getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 
@@ -30,9 +31,10 @@ const PlayerTable = <TData, TValue>({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
   return (
-    <div className="max-w-[25rem] overflow-scroll rounded-[1rem] border-[.3rem] border-black backdrop-filter backdrop-blur-lg bg-opacity-30 bg-gradient-to-r from-gray-300 to-gray-500">
+    <div className="max-w-full overflow-scroll rounded-[1rem] border-[.3rem] border-black backdrop-filter backdrop-blur-lg bg-opacity-30 bg-gradient-to-r from-gray-300 to-gray-500">
       <Table className="">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (

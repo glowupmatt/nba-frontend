@@ -11,3 +11,13 @@
 main {
   background-color: rgb(41, 41, 41);
 }
+
+body::-webkit-scrollbar {
+  height: 0;
+}
+
+/* Hide horizontal scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  overflow-x: -moz-scrollbars-none; /* Firefox */
+}

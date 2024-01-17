@@ -15,15 +15,6 @@ export const MobileColumns: ColumnDef<UpdatePlayerType>[] = [
     cell: (playerName) => playerName.getValue(),
   },
   {
-    accessorKey: "minutesPlayed",
-    header: "Minutes Played",
-    cell: (cellContext) =>
-      cellContext.row.original.totalStats &&
-      cellContext.row.original.totalStats[0]
-        ? cellContext.row.original.totalStats[0].minutesPlayed
-        : "N/A",
-  },
-  {
     accessorKey: "threePointers",
     header: "3PTs",
     cell: (cellContext) =>
