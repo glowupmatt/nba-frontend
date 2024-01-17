@@ -14,6 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { formatName } from "@/lib/nameFormatting";
 import FilterSelector from "./playerCardComps/FilterSelector";
 import FilterComp from "./totalsComps/FilterComp";
+import CardCarousel from "./playerCardComps/CardCarousel";
 
 type Props = {
   data: UpdatePlayerType[];
@@ -31,29 +32,7 @@ export default function TopFivePlayersByTotal(props: Props) {
   return (
     <div className="flex flex-col gap-4 w-full">
       <FilterComp sortType={sortType} setSortType={setSortType} />
-      <Carousel
-        plugins={[plugin.current]}
-        opts={{
-          align: "center",
-          loop: true,
-        }}
-        className="flex flex-col"
-      >
-        <CarouselContent className="z-30 relative">
-          {sortPlayersTotal(data, sortType)
-            .slice(0, 5)
-            .map((player: UpdatePlayerType, index: number) => {
-              return (
-                <CarouselItem
-                  key={player.id}
-                  className="flex justify-center items-center w-full h-full basis-[70%]"
-                >
-                  <PlayerCard player={player} index={index} />
-                </CarouselItem>
-              );
-            })}
-        </CarouselContent>
-      </Carousel>
+      <CardCarousel data={data} sortType={sortType} />
       <Image
         alt="orange-ball"
         src="/orangeBall.svg"

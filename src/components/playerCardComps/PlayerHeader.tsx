@@ -10,7 +10,7 @@ const PlayerHeader = (props: Props) => {
   const { player, index } = props;
   return (
     <div className="flex gap-[1rem] justify-center w-full font-bold text-[1rem] p-4 items-center">
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-between items-center gap-1">
         <PlayerImg
           playerImg={player.playerImage}
           playerName={player.playerName}

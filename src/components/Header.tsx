@@ -8,8 +8,10 @@ const Header = (props: Props) => {
     <div className="flex justify-center items-center">
       <div className="w-full relative">
         <div className="absolute h-full w-full">
-          <h2 className="text-white backdrop-blur-[3px] flex justify-center items-center h-full w-full text-[4rem] font-bold p-4 leading-[3.5rem]">
-            NBA STATS
+          <h2 className="text-white backdrop-blur-[3px] flex  text-start items-center h-full w-full text-[4rem] font-bold p-4 leading-[3.5rem]">
+            NBA
+            <br />
+            STATS
           </h2>
         </div>
         <Image
