@@ -1,12 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table";
 import { UpdatePlayerType } from "@/types/playersType";
-
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-
-// const columnHelper = createColumnHelper<UpdatePlayerType>();
 
 export const MobileColumns: ColumnDef<UpdatePlayerType>[] = [
   {

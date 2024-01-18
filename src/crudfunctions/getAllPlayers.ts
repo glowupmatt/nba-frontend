@@ -12,6 +12,7 @@ export const getAllPlayers = async () => {
     );
 
     const data = await response.data;
+
     return data;
   } catch (err) {
     console.log(err);
