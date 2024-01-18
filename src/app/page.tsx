@@ -1,12 +1,8 @@
-import Image from "next/image";
 import { getAllPlayers } from "@/crudfunctions/getAllPlayers";
 import TopFivePlayersByTotal from "@/components/TopFivePlayersByTotal";
 import Header from "@/components/Header";
 import { PlayerTypeAPI } from "@/types/playersType";
-import PlayerTable from "@/components/playerTableComps/PlayerTable";
-import { MobileColumns } from "@/components/playerTableComps/TableData";
 import TableDisplay from "@/components/playerTableComps/TableDisplay";
-import { Button } from "@/components/ui/button";
 
 export default async function Home() {
   const data: PlayerTypeAPI[] = await getAllPlayers();

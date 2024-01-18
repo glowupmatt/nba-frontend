@@ -6,13 +6,17 @@ import { DataContext } from "@/AppContext";
 type Props = {};
 
 const SearchInput = (props: Props) => {
-  const { setSearchTerm, searchTerm } = useContext(DataContext);
+  const { setSearchTerm, searchTerm, setPaginationPage } =
+    useContext(DataContext);
   return (
     <Input
       className="w-full border-[.1rem] rounded-[.3rem]"
       placeholder="Search Player"
       value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
+      onChange={(e) => {
+        if (searchTerm.length === 0) setPaginationPage(10);
+        setSearchTerm(e.target.value);
+      }}
     />
   );
 };

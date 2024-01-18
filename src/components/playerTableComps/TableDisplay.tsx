@@ -7,8 +7,8 @@ import { PlayerTypeAPI } from "@/types/playersType";
 import { DataContext } from "@/AppContext";
 import Filters from "./headerControls/Filters";
 import SearchInput from "./headerControls/SearchInput";
-import { Button } from "../ui/button";
 import { sortAndFilterData } from "@/lib/sortingFunction";
+import Pagination from "./Pagination";
 type Props = {
   data: PlayerTypeAPI[];
 };
@@ -31,24 +31,7 @@ const TableDisplay = (props: Props) => {
         <Filters />
       </div>
       <PlayerTable columns={MobileColumns} data={sortedData} />
-      <div className="flex items-center justify-between space-x-2 p-4 ">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setPaginationPage(paginationPage - 10)}
-          disabled={paginationPage === 10}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => setPaginationPage(paginationPage + 10)}
-          disabled={searchTerm.length !== 0}
-        >
-          Next
-        </Button>
-      </div>
+      <Pagination sortedData={sortedData} />
     </div>
   );
 };
