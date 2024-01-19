@@ -14,7 +14,7 @@ const PlayerImg = (props: Props) => {
         <img
           src={playerImg}
           alt={`image for ${playerName}`}
-          className="w-full h-full rounded-full object-cover"
+          className="w-[3rem] h-[3rem] object-cover"
         />
       </div>
     </div>

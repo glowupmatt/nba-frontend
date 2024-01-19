@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useContext } from "react";
-import PlayerTable from "./PlayerTable";
+import PlayerTable from "./OffensivePlayerTable";
 import { MobileColumns } from "@/components/playerTableComps/TableData";
 import { PlayerTypeAPI } from "@/types/playersType";
 import { DataContext } from "@/AppContext";
@@ -9,6 +9,8 @@ import Filters from "./headerControls/Filters";
 import SearchInput from "./headerControls/SearchInput";
 import { sortAndFilterData } from "@/lib/sortingFunction";
 import Pagination from "./Pagination";
+import { offensiveFantasyPointsConversion } from "@/lib/fantasyPoints";
+
 type Props = {
   data: PlayerTypeAPI[];
 };
@@ -17,8 +19,10 @@ const TableDisplay = (props: Props) => {
   const { data } = props;
   const { sortBy, paginationPage, setPaginationPage, searchTerm } =
     useContext(DataContext);
+
+  const offensiveFantasyPoints = offensiveFantasyPointsConversion(data);
   const sortedData = sortAndFilterData(
-    data,
+    offensiveFantasyPoints,
     sortBy,
     searchTerm,
     paginationPage

@@ -127,6 +127,7 @@ export type UpdatePlayerType = {
   }[];
   totalStats?: {
     id?: string;
+    team: string;
     totalGamesPlayed?: string;
     totalGamesStarted?: string;
     minutesPlayed?: string;
@@ -140,6 +141,9 @@ export type UpdatePlayerType = {
     blocks?: string;
     turnovers?: string;
     points?: string;
+    freeThrows: string;
+    freeThrowAttempts: string;
+    steals: string;
     playerId?: string;
     createdAt?: string;
     updatedAt?: string;
@@ -172,6 +176,7 @@ export type PlayerTypeAPI = {
   }[];
   totalStats: {
     id: string;
+    team: string;
     totalGamesPlayed: string;
     totalGamesStarted: string;
     minutesPlayed: string;
@@ -185,6 +190,9 @@ export type PlayerTypeAPI = {
     blocks: string;
     turnovers: string;
     points: string;
+    freeThrows: string;
+    freeThrowAttempts: string;
+    steals: string;
     playerId: string;
     createdAt: string;
     updatedAt: string;

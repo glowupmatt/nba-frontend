@@ -24,6 +24,9 @@ const PlayerStats = (props: Props) => {
     "fieldGoalAttempts",
     "minutesPlayed",
     "totalGamesStarted",
+    "team",
+    "freeThrows",
+    "freeThrowAttempts",
   ];
 
   return (

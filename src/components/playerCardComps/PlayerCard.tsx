@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { UpdatePlayerType } from "@/types/playersType";
 import PlayerHeader from "./PlayerHeader";
-import PlayerImg from "./PlayerImg";
 import PlayerStats from "./PlayerStats";
 
 type Props = {

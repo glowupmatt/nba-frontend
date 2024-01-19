@@ -20,7 +20,7 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, any[]>[];
 }
 
-const PlayerTable = <TData, TValue>({
+const OffensivePlayerTable = <TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) => {
@@ -87,4 +87,4 @@ const PlayerTable = <TData, TValue>({
   );
 };
 
-export default PlayerTable;
+export default OffensivePlayerTable;

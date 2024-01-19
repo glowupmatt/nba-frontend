@@ -1,6 +1,5 @@
 import { sortPlayersTotal } from "@/lib/sortingFunctions";
 import { UpdatePlayerType } from "@/types/playersType";
-import { plugin } from "postcss";
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import PlayerCard from "./PlayerCard";
