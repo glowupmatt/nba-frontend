@@ -8,6 +8,15 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+body {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--background-start-rgb), 1) 0%,
+    rgba(var(--background-end-rgb), 1) 100%
+  );
+  color: rgba(var(--foreground-rgb), 1);
+}
+
 main {
   background-color: rgb(41, 41, 41);
 }
@@ -16,8 +25,7 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-/* Hide horizontal scrollbar for IE, Edge and Firefox */
 body {
-  -ms-overflow-style: none; /* IE and Edge */
-  overflow-x: -moz-scrollbars-none; /* Firefox */
+  -ms-overflow-style: none;
+  overflow-x: -moz-scrollbars-none;
 }

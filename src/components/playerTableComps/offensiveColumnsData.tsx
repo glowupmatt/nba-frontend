@@ -68,7 +68,7 @@ const getCellValue = (cellContext: any, key: string) => {
     : "N/A";
 };
 
-export const MobileColumns: ColumnDef<UpdatePlayerType>[] = columnKeys.map(
+export const offensiveColumns: ColumnDef<UpdatePlayerType>[] = columnKeys.map(
   (key) => ({
     accessorKey: key,
     header: () => {
